@@ -70,7 +70,7 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a href="/penjadwalan/" class="nav-link">
+                <a href="/penjadwalan/"  class="nav-link">
                     <i class="fa fa-calendar-days"></i>
                     <span>Penjadwalan</span>
                 </a>
@@ -322,7 +322,7 @@
                     @yield('content')
                     <!-- /.card -->
 
-                </section>
+                  </section>
 
             </div>
             <!-- End of Main Content -->
