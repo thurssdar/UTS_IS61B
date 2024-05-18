@@ -1,13 +1,11 @@
 
 @extends('layouts.master')
-@section('bc')
-    <ol class="breadcrumb float-sm-right">
-    <li class="breadcrumb-item"><a href="#">Home</a></li>
-  </ol>
-@endsection
 @yield('content')
 @section('content')
     <div class="card">
+        <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+          </ol>
         <div class="card-header">
             <a href="/penjadwalan/form/" class="btn btn-primary"><i class="fa fa-plus"></i> Tambah Data</a>
         </div>

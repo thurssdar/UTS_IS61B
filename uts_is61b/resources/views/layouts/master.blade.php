@@ -45,7 +45,7 @@
             <!-- Sidebar user (optional) -->
             <li class="nav-item">
                 <a class="nav-link" href="#">
-                    <i class="fa-solid fa-user"></i>
+                    <i class="fa-solid fa-user" aria-hidden="true"></i>
                     <span><b>{{ Auth::user()->name }}</b></span></a>
             </li>
              <!-- Divider -->
@@ -69,7 +69,7 @@
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
                 <a href="/penjadwalan/"  class="nav-link">
-                    <i class="fa fa-calendar-days"></i>
+                    <i class="fa-solid fa-calendar-days"></i>
                     <span>Penjadwalan</span>
                 </a>
             </li>
