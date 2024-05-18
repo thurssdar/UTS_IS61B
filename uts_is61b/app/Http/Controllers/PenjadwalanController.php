@@ -80,9 +80,8 @@ class PenjadwalanController extends Controller
      */
     public function destroy(string $id)
     {
-        // $jur = Jurusan::find($id);
-        // $jur->delete();
-
-        // return redirect('/jurusan/');
+        $pj = Penjadwalan::find($id);
+        $pj->delete();
+        return redirect('/penjadwalan/');
     }
 }

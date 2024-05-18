@@ -61,11 +61,11 @@
                                         <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body">
-                                        Yakin ingin menghapus data kode penjadwalan <b>{{$item->kode}}</b>?
+                                        Yakin ingin menghapus data penjadwalan <b>{{$item->kelas}}</b>?
                                         </div>
                                         <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                                        <form action="/jurusan/{{$item->kode}}" method="post">
+                                        <form action="/penjadwalan/{{$item->id}}" method="POST">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-primary">Hapus</button>
