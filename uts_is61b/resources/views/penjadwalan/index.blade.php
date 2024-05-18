@@ -46,7 +46,7 @@
                                     <td>{{ $item->jam }}</td>
                                     <td>{{ $item->dosen }}</td>
                                     <td>
-                                        <a href="/jurusan/edit/{{$item->kode}}" class="btn btn-info btn-xs"><i class="fa fa-pencil-alt"></i></a>
+                                        <a href="/penjadwalan/edit/{{$item->id}}" class="btn btn-info btn-xs"><i class="fa fa-pencil-alt"></i></a>
 
                                 <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#hapus{{$item->kode}}">
                                     <i class="fa fa-trash"></i>

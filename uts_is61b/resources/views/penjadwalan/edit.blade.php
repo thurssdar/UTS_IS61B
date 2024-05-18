@@ -1,11 +1,11 @@
 @extends('layouts.master')
-@section('title','Edit Jurusan')
-@section('judul','Edit Jurusan')
+@section('title','Edit Penjadwalan')
+@section('judul','Edit Penjadwalan')
 @section('bc')
     <ol class="breadcrumb float-sm-right">
         <li class="breadcrumb-item"><a href="#">Home</a></li>
-        <li class="breadcrumb-item"><a href="#">Data Jurusan</a></li>
-        <li class="breadcrumb-item active">Edit Jurusan</li>
+        <li class="breadcrumb-item"><a href="#">Data Penjadwalan</a></li>
+        <li class="breadcrumb-item active">Edit Penjadwalan</li>
     </ol>
 @endsection
 
@@ -24,16 +24,16 @@
         </div>
         </div>
         <div class="card-body">
-            <form method="post" action="/jurusan/{{$pj->id}}">
+            <form method="POST" action="/penjadwalan/{{$pj->id}}">
                 @method('PUT')
                 @csrf
                 <div class="mb-3">
                     <label class="form-label">Kode Penjadwalan</label>
-                    <input type="text" readonly value="{{$pj->kodepj}}" class="form-control" name="kodepj">
+                    <input type="text" readonly value="{{$pj->kode}}" class="form-control" name="kode">
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Kode Kelas</label>
-                    <input type="text" value="{{$pj->kelas}}" class="form-control" name="kodekls">
+                    <input type="text" value="{{$pj->kelas}}" class="form-control" name="kelas">
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Mata Kuliah</label>
@@ -45,7 +45,7 @@
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Jam</label>
-                    <input type="date" value="{{$pj->jam}}" class="form-control" name="jam">
+                    <input type="time" value="{{$pj->jam}}" class="form-control" name="jam">
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Dosen</label>

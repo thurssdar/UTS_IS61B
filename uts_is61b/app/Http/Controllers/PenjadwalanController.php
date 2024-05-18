@@ -58,7 +58,7 @@ class PenjadwalanController extends Controller
     public function edit(string $id)
     {
         $pj = Penjadwalan::find($id);
-            return view('penjadwalan.edit', compact('pj'));
+            return view('penjadwalan.edit',compact('pj'));
 
     }
 
@@ -69,7 +69,11 @@ class PenjadwalanController extends Controller
     {
          $pj = Penjadwalan::find($id);
          $pj->kode = $request->kode;
-         $pj->jurusan = $request->nama;
+         $pj->kelas = $request->kelas;
+         $pj->mk = $request->mk;
+         $pj->hari = $request->hari;
+         $pj->jam = $request->jam;
+         $pj->dosen = $request->dosen;
          $pj->save();
 
          return redirect('/penjadwalan/');
