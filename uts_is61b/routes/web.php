@@ -24,9 +24,9 @@ Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/penjadwalan/', [PenjadwalanController::class, 'index'])->middleware('auth');
+Route::get('penjadwalan', [PenjadwalanController::class, 'index']);
 Route::get('/penjadwalan/form/', [PenjadwalanController::class, 'create'])->middleware('auth');
-Route::post('/penjadwalan/store/', [PenjadwalanController::class, 'store'])->middleware('auth');
+Route::post('/penjadwalan/form/', [PenjadwalanController::class, 'store'])->middleware('auth');
 Route::get('/penjadwalan/edit/{kodepj}', [PenjadwalanController::class, 'edit'])->middleware('auth');
 Route::put('/penjadwalan/{kodepj}', [PenjadwalanController::class, 'update'])->middleware('auth');
 Route::delete('/penjadwalan/{kodepj}', [PenjadwalanController::class, 'destroy'])->middleware('auth');

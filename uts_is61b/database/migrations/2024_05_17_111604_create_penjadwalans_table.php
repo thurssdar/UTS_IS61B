@@ -12,7 +12,14 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('penjadwalans', function (Blueprint $table) {
+
             $table->id();
+            $table->string('kode')->unique();
+            $table->string('kelas');
+            $table->string('mk');
+            $table->string('hari');
+            $table->string('jam');
+            $table->string('dosen');
             $table->timestamps();
         });
     }

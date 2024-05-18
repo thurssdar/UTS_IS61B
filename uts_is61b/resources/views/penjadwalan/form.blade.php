@@ -1,49 +1,47 @@
 @extends('layouts.master')
 @section('title','Tambah Jadwal')
 @section('judul','Tambah Jadwal')
+
 @section('bc')
-    <ol class="breadcrumb float-sm-right">
-        <li class="breadcrumb-item"><a href="#">Home</a></li>
-        <li class="breadcrumb-item"><a href="#">Data Jadwal</a></li>
-        <li class="breadcrumb-item active">Tambah Jadwal</li>
-    </ol>
-@endsection
-@section('content')
     <div class="card">
-        <div class="card-header">
-        <div class="card-tools">
-            <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-            <i class="fas fa-minus"></i>
-            </button>
-            <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
-            <i class="fas fa-times"></i>
-            </button>
+        <div class="card-header" >
+            <ol class="breadcrumb float-sm-left">
+                <li class="breadcrumb-item"><a href="/penjadwalan/">Data Jadwal</a></li>
+                <li class="breadcrumb-item"><a href="/home/">Home</a></li>
+                <li class="breadcrumb-item active">Tambah Jadwal</li>
+            </ol>
         </div>
-        </div>
+
+        @endsection
+
+        @section('content')
+
+
         <div class="card-body">
-            <form method="post" action="/penjadwalan/store/">
+            <form method="POST" action="/penjadwalan/form/">
+
                 @csrf
-                <div class="mb-3">
+                <div class="form-group">
                     <label class="form-label">Kode Penjadwalan</label>
-                    <input type="text" class="form-control" name="kodepj">
+                    <input type="text" class="form-control" name="kode">
                 </div>
-                <div class="mb-3">
+                <div class="form-group">
                     <label class="form-label">Kode Kelas</label>
-                    <input type="text" class="form-control" name="kodekls">
+                    <input type="text" class="form-control" name="kelas">
                 </div>
-                <div class="mb-3">
+                <div class="form-group">
                     <label class="form-label">Mata Kuliah</label>
                     <input type="text" class="form-control" name="mk">
                 </div>
-                <div class="mb-3">
+                <div class="form-group">
                     <label class="form-label">Hari</label>
                     <input type="text" class="form-control" name="hari">
                 </div>
-                <div class="mb-3">
+                <div class="form-group">
                     <label class="form-label">Jam</label>
-                    <input type="date" class="form-control" name="jam">
+                    <input type="time" class="form-control" name="jam">
                 </div>
-                <div class="mb-3">
+                <div class="form-group">
                     <label class="form-label">Dosen</label>
                     <input type="text" class="form-control" name="dosen">
                 </div>

@@ -30,12 +30,17 @@ class PenjadwalanController extends Controller
      */
     public function store(Request $request)
     {
-        // $jur = new Jurusan;
-        // $jur->kode = $request->kode;
-        // $jur->jurusan = $request->nama;
-        // $jur->save();
 
-        // return redirect('/jurusan/');
+        $pj = new Penjadwalan;
+        $pj->kode = $request->kode;
+        $pj->kelas = $request->kelas;
+        $pj->mk = $request->mk;
+        $pj->hari = $request->hari;
+        $pj->jam = $request->jam;
+        $pj->dosen = $request->dosen;
+        $pj->save();
+
+        return redirect('/penjadwalan/');
     }
 
     /**
@@ -52,8 +57,9 @@ class PenjadwalanController extends Controller
      */
     public function edit(string $id)
     {
-        // $jur = Jurusan::find($id);
-        // return view('jurusan.edit',compact('jur'));
+        $pj = Penjadwalan::find($id);
+            return view('penjadwalan.edit', compact('pj'));
+
     }
 
     /**
@@ -61,12 +67,12 @@ class PenjadwalanController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        // $jur = Jurusan::find($id);
-        // $jur->kode = $request->kode;
-        // $jur->jurusan = $request->nama;
-        // $jur->save();
+         $pj = Penjadwalan::find($id);
+         $pj->kode = $request->kode;
+         $pj->jurusan = $request->nama;
+         $pj->save();
 
-        // return redirect('/jurusan/');
+         return redirect('/penjadwalan/');
     }
 
     /**

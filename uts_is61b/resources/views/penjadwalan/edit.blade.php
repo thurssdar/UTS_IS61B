@@ -33,7 +33,7 @@
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Kode Kelas</label>
-                    <input type="text" readonly value="{{$pj->kelas}}" class="form-control" name="kodekls">
+                    <input type="text" value="{{$pj->kelas}}" class="form-control" name="kodekls">
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Mata Kuliah</label>

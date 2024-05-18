@@ -9,21 +9,19 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>PBS UNIDA</title>
-
-
+    <title>@yield('title')</title>
     <!-- ... -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     <!-- Custom fonts for this template-->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="{{asset('vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="css/sb-admin-2.min.css" rel="stylesheet">
-
+    <link href="{{ asset('css/sb-admin-2.min.css')}}" rel="stylesheet">
+    @yield('css')
 </head>
 
 <body id="page-top">
@@ -304,25 +302,18 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-
                     <!-- Page Heading -->
-                    <div class="row mb-2">
-                        <div class="col-sm-6">
-                          <h1>@yield('judul')</h1>
-                        </div>
-                        <div class="col-sm-6">
-                          @yield('bc')
-                        </div>
-                      </div>
+                    <h1 class="h3 mb-4 text-gray-800">@yield('title')</h1>
+                    @yield('bc')
                 </div>
                 <!-- /.container-fluid -->
-                <section class="content">
 
+                <!-- Main content -->
+                <section class="content">
                     <!-- Default box -->
                     @yield('content')
                     <!-- /.card -->
-
-                  </section>
+                </section>
 
             </div>
             <!-- End of Main Content -->
@@ -361,22 +352,26 @@
                 </div>
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">logout</a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="{{asset('vendor/jquery/jquery.min.js')}}"></script>
+    <script src="{{asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="{{asset('vendor/jquery-easing/jquery.easing.min.js')}}"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
+    <script src="{{asset('js/sb-admin-2.min.js')}}"></script>
+@yield('js')
 
 </body>
 
