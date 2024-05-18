@@ -9,7 +9,12 @@
     </ol>
 @endsection
 
+ <!-- ... -->
+ @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+
 @section('content')
+@yield('Penjadwalan')
     <div class="card">
         <div class="card-header">
 
@@ -24,15 +29,15 @@
         </div>
         </div>
         <div class="card-body">
-            <form method="post" action="/jurusan/store/">
+            <form method="post" action="/penjadwalan/store/">
                 @csrf
                 <div class="mb-3">
                     <label class="form-label">Kode Penjadwalan</label>
-                    <input type="text" class="form-control" name="kode">
+                    <input type="text" class="form-control" name="kodepj">
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Kode Kelas</label>
-                    <input type="text" class="form-control" name="nama">
+                    <input type="text" class="form-control" name="kelas">
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Kode Kelas</label>

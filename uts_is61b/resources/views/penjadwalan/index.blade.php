@@ -7,6 +7,10 @@
         <li class="breadcrumb-item active">Penjadwalan</li>
     </ol>
 @endsection
+@yield('Penjadwalan')
+ <!-- ... -->
+ @vite(['resources/css/app.css', 'resources/js/app.js'])
+
 
 
 <div class="card-body">
@@ -47,7 +51,7 @@
                         </button>
 
                         <!-- Modal -->
-                        <div class="modal fade" id="hapus{{$item->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal fade" id="hapus{{$item->kodepj}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
@@ -55,11 +59,11 @@
                                 <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                Yakin ingin menghapus data jurusan <b>{{$item->jurusan}}</b>?
+                                Yakin ingin menghapus data jurusan <b>{{$item->penjadwalan}}</b>?
                                 </div>
                                 <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
-                                <form action="/penjadwalan/{{$item->id}}" method="post">
+                                <form action="/penjadwalan/{{$item->kode}}" method="post">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-primary">Hapus</button>

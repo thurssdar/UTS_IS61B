@@ -37,13 +37,21 @@
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('home') }}">
                 <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
+                    <i class="fa-solid fa-building-columns"></i>
                 </div>
                 <div class="sidebar-brand-text mx-3">PBS UNIDA</div>
             </a>
 
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
+            <!-- Sidebar user (optional) -->
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fa-solid fa-user"></i>
+                    <span><b>{{ Auth::user()->name }}</b></span></a>
+            </li>
+             <!-- Divider -->
+             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
@@ -62,8 +70,7 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="/penjadwalan/" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
+                <a href="/penjadwalan/" class="nav-link">
                     <i class="fa fa-calendar-days"></i>
                     <span>Penjadwalan</span>
                 </a>
@@ -299,10 +306,23 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-4 text-gray-800">Blank Page</h1>
-
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                          <h1>@yield('judul')</h1>
+                        </div>
+                        <div class="col-sm-6">
+                          @yield('bc')
+                        </div>
+                      </div>
                 </div>
                 <!-- /.container-fluid -->
+                <section class="content">
+
+                    <!-- Default box -->
+                    @yield('content')
+                    <!-- /.card -->
+
+                </section>
 
             </div>
             <!-- End of Main Content -->

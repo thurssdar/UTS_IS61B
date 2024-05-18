@@ -22,4 +22,6 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/penjadwalan/', [PenjadwalanController::class, 'index'])->middleware('auth');
 Route::get('/penajdwalan/form/', [PenjadwalanController::class, 'create'])->middleware('auth');
